@@ -1,73 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso Técnico em Desenvolvimento de Sistemas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Curso Técnico — Layout Fixo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=PT+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- === SEÇÃO 1 === -->
+  <!-- ===== SEÇÃO 1: HERO com texto à esquerda e imagem à direita ===== -->
   <section class="hero">
-    <h2>Curso Técnico em Desenvolvimento de Sistemas</h2>
-    <h1>Explore o Curso de Desenvolvimento de Sistemas e descubra o poder da tecnologia!</h1>
-    <p>Prepare-se para dominar as linguagens da programação, compreender a lógica computacional e criar soluções digitais inovadoras que transformam o mundo.</p>
-  </section>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
 
-  <!-- === SEÇÃO 2 - DESTAQUES === -->
-  <section class="highlights">
-    <h2>Destaques</h2>
-    <div class="highlight-cards">
-      <div class="card">
-        <img src="img/Professores.png" alt="Professores">
-        <p>Professores</p>
+        <h1 class="hero-title">
+          Explore o Curso de<br />
+          Desenvolvimento
+        </h1>
+
+        <p class="hero-desc">
+          Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
+        </p>
+
+        <button class="btn-ghost" id="btn-saiba">Saiba mais</button>
       </div>
-      <div class="card">
-        <img src="img/Projetos.png" alt="Projetos">
-        <p>Projetos</p>
-      </div>
-      <div class="card">
-        <img src="img/Escola.png" alt="Escola">
-        <p>Escola</p>
+
+      <div class="hero-right">
+        <img src="images/section1.jpg" alt="Sala e decoração">
       </div>
     </div>
   </section>
 
-  <!-- === SEÇÃO 3 - ATIVIDADES === -->
-  <section class="activities">
-    <h2>Um pouco sobre nossas atividades</h2>
+  <!-- ===== SEÇÃO 2: Destaques com 3 cards (título acima, cards abaixo) ===== -->
+  <section class="destaques">
+    <div class="destaques-inner">
+      <h2 class="section-title">Destaques</h2>
+
+      <div class="cards">
+        <figure class="card">
+          <img src="images/section2-1.jpg" alt="Professores">
+          <figcaption>Professores</figcaption>
+        </figure>
+
+        <figure class="card">
+          <img src="images/section2-2.jpg" alt="Projetos">
+          <figcaption>Projetos</figcaption>
+        </figure>
+
+        <figure class="card">
+          <img src="images/section2-3.jpg" alt="Escola">
+          <figcaption>Escola</figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
-  <!-- === SEÇÃO 4 - CONTATO === -->
-  <section class="contact">
-    <div class="contact-row">
-      <div class="social">
-        <h2>Siga-nos nas redes sociais</h2>
+  <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
+  <section class="atividades">
+    <div class="atividades-inner">
+      <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
+      <button class="btn-primary" id="btn-clique">Clique aqui</button>
+    </div>
+    <div class="atividades-bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== SEÇÃO 4: Contato & redes sociais (layout corrigido) ===== -->
+  <section class="contato">
+    <div class="contato-inner">
+      <div class="contato-left">
+        <!-- Siga-nos nas redes sociais (agora à esquerda) -->
+        <h3 class="redes-title">Siga-nos nas redes sociais</h3>
         <div class="social-icons">
-          <img src="img/instagram.png" alt="Instagram">
-          <img src="img/facebook.png" alt="Facebook">
-          <img src="img/whatsapp.png" alt="WhatsApp">
+          <img src="images/icon-instagram.png" alt="Instagram">
+          <img src="images/icon-facebook.png" alt="Facebook">
+          <img src="images/icon-whatsapp.png" alt="WhatsApp">
         </div>
       </div>
 
-      <div class="form">
-        <h2>Converse conosco</h2>
-        <form>
-          <input type="text" placeholder="Seu nome" required>
-          <input type="email" placeholder="Seu e-mail" required>
-          <textarea placeholder="Sua mensagem" rows="4" required></textarea>
-          <button type="submit">Enviar</button>
+      <div class="contato-right">
+        <!-- Converse conosco (agora à direita, acima do formulário) -->
+        <h2 class="section-big">Converse<br />conosco</h2>
+
+        <form class="contact-form" onsubmit="return false;">
+          <label>Nome <span class="muted">(obrigatório)</span></label>
+          <div class="two-cols">
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="Sobrenome">
+          </div>
+
+          <label>E-mail <span class="muted">(obrigatório)</span></label>
+          <input type="email" placeholder="Seu e-mail">
+
+          <label>Mensagem <span class="muted">(obrigatório)</span></label>
+          <textarea placeholder="Escreva sua mensagem..."></textarea>
+
+          <button class="btn-ghost small" id="btn-enviar">Enviar</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- === SEÇÃO 5 - RODAPÉ === -->
+  <!-- ===== SEÇÃO 5: Footer com newsletter ===== -->
   <footer class="footer">
-    <p><span>Siga-nos</span><span>Instagram</span><span>Facebook</span><span>WhatsApp</span></p>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <h2 class="footer-title">Desenvolvimento de<br />sistemas</h2>
+      </div>
+
+      <div class="footer-center">
+        <img src="images/illustration.png" alt="Ilustração" class="footer-illu">
+        <nav class="footer-links">
+          <a href="#">Siga-nos</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </nav>
+      </div>
+
+      <div class="footer-right">
+        <p class="newsletter-text">Cadastre seu endereço de e-mail para receber novidades e atualizações.</p>
+
+        <div class="newsletter">
+          <input type="email" placeholder="Endereço de e-mail">
+          <button class="btn-primary small" id="btn-cadastre">Cadastre-se</button>
+        </div>
+      </div>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
