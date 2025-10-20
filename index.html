@@ -13,52 +13,73 @@
 <body>
 
   <!-- ===== SEÇÃO 1: HERO com texto à esquerda e imagem à direita ===== -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="top-label">Curso Técnico de Desenvolvimento de Sistemas</div>
 
-        <h1 class="hero-title">
-          Explore o Curso de<br />
-          Desenvolvimento
-        </h1>
+      <h1 class="hero-title">
+        Explore o Curso de<br />
+        Desenvolvimento
+      </h1>
 
-        <p class="hero-desc">
-          Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
-        </p>
+      <p class="hero-desc">
+        Descubra o futuro da educação com o nosso curso técnico, projetado para atender às suas necessidades de aprendizado. Com uma variedade de disciplinas e especialistas na área, oferecemos uma oportunidade única de desenvolvimento profissional e pessoal.
+      </p>
 
-        <button class="btn-ghost" id="btn-saiba">Saiba mais</button>
+      <!-- Botão corrigido -->
+      <a href="sobre.html" class="btn-ghost">Saiba mais</a>
+    </div>
+
+    <!-- Imagem à direita (mantém proporção e posição) -->
+    <div class="hero-right">
+      <img src="imagem1.jpeg" alt="Sala e decoração">
+    </div>
+  </div>
+</section>
+
+<h2 class="section-title">Destaques</h2>
+
+<div class="cards">
+  <!-- Cartão 1: Professores -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://via.placeholder.com/300x400?text=Professores" alt="Professores" class="card-image">
+        <div class="card-label">Professores</div>
       </div>
-
-      <div class="hero-right">
-        <img src="imagem1.jpeg" alt="Sala e decoração">
+      <div class="card-back">
+        <p>Informações sobre os professores: formação, experiência e disciplinas que lecionam.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ===== SEÇÃO 2: Destaques com 3 cards (título acima, cards abaixo) ===== -->
-  <section class="destaques">
-    <div class="destaques-inner">
-      <h2 class="section-title">Destaques</h2>
-
-      <div class="cards">
-        <figure class="card">
-          <img src="imagem2.1.jpeg" alt="Professores">
-          <figcaption>Professores</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="imagem2.2.jpeg" alt="Projetos">
-          <figcaption>Projetos</figcaption>
-        </figure>
-
-        <figure class="card">
-          <img src="imagem2.3.png" alt="Escola">
-          <figcaption>Escola</figcaption>
-        </figure>
+  <!-- Cartão 2: Projetos -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://via.placeholder.com/300x400?text=Projetos" alt="Projetos" class="card-image">
+        <div class="card-label">Projetos</div>
+      </div>
+      <div class="card-back">
+        <p>Projetos desenvolvidos pelos alunos, incluindo feiras, robótica e sustentabilidade.</p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Cartão 3: Escola -->
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://via.placeholder.com/300x400?text=Escola" alt="Escola" class="card-image">
+        <div class="card-label">Escola</div>
+      </div>
+      <div class="card-back">
+        <p>Informações sobre a estrutura da escola, salas, laboratórios e áreas comuns.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
   <section class="atividades">

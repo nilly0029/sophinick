@@ -37,16 +37,91 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 /* --- Espaçamento entre seções (sutil, uniforme) --- */
 section{padding-top:40px;padding-bottom:60px}
 
-/* --- DESTAQUES (Seção 2) --- */
-.destaques{background:#92A9AE;display:flex;justify-content:center}
-.destaques-inner{width:1100px}
-.section-title{font-family:"Marcellus",serif;font-size:62px;color:var(--dark);margin-bottom:34px}
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #92A9AE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Cards: título acima, cards abaixo (centralizados) */
-.cards{display:flex;gap:34px;justify-content:space-between;align-items:start}
-.card{width:340px;text-align:center}
-.card img{width:100%;height:auto;border:6px solid rgba(0,0,0,0.06);border-radius:2px;display:block}
-.card figcaption{margin-top:18px;font-family:"Marcellus",serif;font-size:28px;color:var(--dark)}
+.section-title {
+  font-size: 48px;
+  color: white;
+  margin: 40px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background-color: #fff;
+  z-index: 2;
+}
+
+.card-back {
+  background-color: #003366;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 20px;
+  text-align: center;
+  color: #003366;
+}
 
 /* --- ATIVIDADES (Seção 3) --- */
 .atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
@@ -69,7 +144,7 @@ section{padding-top:40px;padding-bottom:60px}
 .atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
 
 /* --- CONTATO (Seção 4) --- */
-.contato{background:#8EA6AA;display:flex;justify-content:center}
+.contato{background:oklch(70.552% 0.02639 209.415);display:flex;justify-content:center}
 .contato-inner{width:1100px;display:flex;gap:40px;align-items:flex-start}
 
 /* esquerda: redes sociais */
