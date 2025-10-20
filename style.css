@@ -28,90 +28,119 @@ section {
   padding-bottom: 60px;
 }
 
-/* ===== HERO (mantido conforme desejado) ===== */
-.hero {
-  width: 100vw;
-  background: #5B7580;
-  display: flex;
-  justify-content: center;
-  padding: 60px 0 40px 0;
+/* Reset e base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102836}
+
+/* Tipografia */
+:root{
+  --cream:#F6EFD8;
+  --dark:#102836;
+  --muted-bg:#92A9AE;
 }
 
-.hero-inner {
-  width: 1100px;
-  display: grid;
-  grid-template-columns: 1fr 540px;
-  gap: 30px;
+/* --- HERO (Seção 1) --- */
+.hero{
+  width:100vw;
+  background:#5B7580;
+  display:flex;
+  justify-content:center;
+  padding:60px 0 40px 0;
+}
+
+.hero-inner{
+  width:1100px;
+  display:flex; /* <-- usa flex para alinhar lado a lado */
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+}
+
+.hero-left{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-right:20px;
+  position:relative;
+}
+
+.top-label{
+  font-family:"Marcellus",serif;
+  color:var(--cream);
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.hero-title{
+  font-family:"Marcellus",serif;
+  font-size:72px;
+  line-height:0.95;
+  color:var(--cream);
+  margin-top:12px;
+  margin-bottom:28px;
+}
+
+.hero-desc{
+  font-size:16px;
+  color:var(--cream);
+  max-width:560px;
+  margin-bottom:36px;
+  opacity:0.95;
+}
+
+/* Botão “Saiba mais” */
+.btn-ghost{
+  background:var(--cream);
+  color:var(--dark);
+  border:none;
+  padding:16px 54px;
+  border-radius:40px;
+  font-family:"PT Serif";
+  font-size:16px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.btn-ghost:hover{
+  opacity:0.9;
+}
+
+/* Imagem à direita */
+.hero-right{
+  width:540px;
+  height:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-right img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:8px;
+}
+
+/* --- Espaçamento entre seções --- */
+section{padding-top:40px;padding-bottom:60px}
+
+/* --- SEÇÃO 2: CARDS --- */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #92A9AE;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.hero-left {
-  position: relative;
-  padding-left: 10px;
-}
-
-.top-label {
-  position: absolute;
-  left: 0;
-  top: -24px;
-  font-family: "Marcellus", serif;
-  color: var(--cream);
-  font-size: 18px;
-}
-
-.hero-title {
-  font-family: "Marcellus", serif;
-  font-size: 72px;
-  line-height: 0.95;
-  color: var(--cream);
-  margin-top: 12px;
-  margin-bottom: 28px;
-  margin-left: 6px;
-}
-
-.hero-desc {
-  font-size: 16px;
-  color: var(--cream);
-  max-width: 560px;
-  margin-bottom: 36px;
-  margin-left: 6px;
-  opacity: 0.95;
-}
-
-.btn-ghost {
-  background: var(--cream);
-  color: var(--dark);
-  border: none;
-  padding: 16px 54px;
-  border-radius: 40px;
-  font-family: "PT Serif";
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.hero-right {
-  width: 540px;
-  height: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-right img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ===== RESTANTE DAS SEÇÕES ===== */
 .section-title {
   font-size: 48px;
   color: white;
-  text-align: center;
-  margin: 40px 0;
+  margin: 40px;
 }
 
 .cards {
@@ -127,7 +156,117 @@ section {
   perspective: 1000px;
 }
 
-/* ... (mantém o restante do CSS exatamente como você me enviou) ... */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-front {
+  background-color: #fff;
+  z-index: 2;
+}
+
+.card-back {
+  background-color: #003366;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 20px;
+  text-align: center;
+  color: #003366;
+}
+
+/* --- ATIVIDADES (Seção 3) --- */
+.atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
+.atividades-inner{position:relative;z-index:2;text-align:center}
+.atividades-title{font-family:"Marcellus",serif;font-size:64px;color:var(--cream);margin-bottom:22px}
+.btn-primary{background:var(--cream);color:var(--dark);border-radius:40px;padding:18px 56px;border:none;font-family:"PT Serif";font-size:16px;cursor:pointer}
+
+/* Background image: mostrar inteira (não cortar) */
+.atividades-bg{
+  position:absolute;inset:0;z-index:1;
+  background-image:url("images/section3.jpg");
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-size:contain;
+  opacity:1;
+  pointer-events:none;
+}
+
+.atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
+
+/* --- CONTATO (Seção 4) --- */
+.contato{background:oklch(70.552% 0.02639 209.415);display:flex;justify-content:center}
+.contato-inner{width:1100px;display:flex;gap:40px;align-items:flex-start}
+
+.contato-left{width:420px;padding-left:6px}
+.redes-title{font-family:"Marcellus",serif;font-size:28px;color:var(--dark);margin-bottom:22px}
+.social-icons{display:flex;gap:40px;align-items:center}
+.social-icons img{width:120px;opacity:0.6}
+
+.contato-right{flex:1}
+.section-big{font-family:"Marcellus",serif;font-size:72px;color:var(--dark);line-height:0.95;margin-bottom:22px}
+.contact-form label{display:block;font-size:14px;color:var(--dark);margin-bottom:8px;font-weight:700}
+.two-cols{display:flex;gap:18px;margin-bottom:12px}
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea{
+  width:100%;padding:14px 18px;border-radius:24px;border:2px solid rgba(16,40,54,0.6);background:rgba(255,255,255,0.06);font-family:"PT Serif";font-size:14px;color:var(--dark);outline:none
+}
+.contact-form textarea{border-radius:20px;padding:18px;height:140px;resize:none}
+.btn-ghost.small{margin-top:18px}
+
+/* --- FOOTER --- */
+.footer{width:100%;background:#173842;padding:48px 0;color:var(--cream)}
+.footer-inner{width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.footer-title{font-family:"Marcellus",serif;font-size:44px}
+.footer-illu{width:160px;margin-bottom:12px}
+.footer-links a{color:var(--cream);text-decoration:underline;font-family:"PT Serif"}
+
+.footer-right{width:360px}
+.newsletter input{flex:1;padding:16px;border-radius:4px;border:none;font-size:14px}
+
+/* pequenas correções visuais para preservar o layout fixo */
+@media (max-width:1100px){
+  .hero-inner{flex-direction:column;align-items:center}
+  .hero-right{width:420px}
+}
 
 
 /* --- Espaçamento entre seções (sutil, uniforme) --- */
