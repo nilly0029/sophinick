@@ -1,1 +1,136 @@
+<!-- sobre.html -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Um pouco sobre nós</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #7a8d91;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 1s ease; /* animação de transição */
+    }
 
+    body.loaded {
+      opacity: 1; /* aparece suavemente */
+    }
+
+    header {
+      background-color: #60737a;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #60737a;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      padding: 25px;
+      width: 380px;
+      max-width: 90%;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      display: inline-block;
+      background-color: #f8f3e7;
+      color: #3b3b3b;
+      border-radius: 12px;
+      padding: 6px 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      background-color: #f8f3e7;
+      color: #3b3b3b;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #e1d8c8;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>Um pouco sobre nós</header>
+
+  <div class="container">
+    <!-- Card sobre o curso -->
+    <div class="card">
+      <div class="section-title">O que o nosso curso oferece?</div>
+      <p>
+        O Colégio Júlio Szymanski oferece o Curso Técnico em Informática, que prepara os alunos
+        para o mercado de Tecnologia da Informação. Durante o curso, os estudantes aprendem
+        programação, montagem e manutenção de computadores, redes e desenvolvimento de sites e sistemas.
+      </p>
+      <p>
+        As principais habilidades desenvolvidas são:
+        <ul>
+          <li>Raciocínio lógico e resolução de problemas</li>
+          <li>Programação e segurança da informação</li>
+          <li>Trabalho em equipe e inovação</li>
+        </ul>
+        O curso também estimula a criatividade, a inovação e o pensamento crítico, preparando o estudante para enfrentar desafios reais do mundo digital e para seguir tanto na carreira profissional quanto em cursos superiores da área de tecnologia.
+        Com uma formação moderna e prática, o Colégio Júlio Szymanski oferece aos alunos a oportunidade de se tornarem profissionais qualificados e prontos para o futuro da tecnologia.  A formação é prática e moderna, capacitando os alunos para atuar em diferentes áreas
+        da tecnologia e seguir carreira na área
+      </p>
+    </div>
+
+    <!-- Card sobre a Alura -->
+    <div class="card">
+      <img src="https://www.alura.com.br/assets/img/alura-share.1639465077.png" alt="Logo da Alura">
+      <p>
+        Além disso, o Colégio Júlio Szymanski oferece acesso à plataforma Alura, onde os alunos podem
+        fazer cursos online nas áreas de programação, design, dados e marketing digital.
+      </p>
+      <p>
+        A Alura ajuda os estudantes a desenvolver autonomia, disciplina e novas habilidades
+        tecnológicas, complementando o aprendizado da escola e preparando-os para o mercado
+        de trabalho.
+      </p>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">Voltar</a>
+
+  <script>
+    // Faz o efeito fade-in quando a página é carregada
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
