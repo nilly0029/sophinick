@@ -10,29 +10,85 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 }
 .top-label{font-family:"Marcellus",serif;color:var(--cream);font-size:20px;}
 
-/* --- HERO (Seção 1) --- */
-.hero{width:100vw;background:#5B7580;display:flex;justify-content:center;padding:60px 0 40px 0}
-.hero-inner{width:1100px;display:grid;grid-template-columns:1fr 540px;gap:30px;align-items:start;position:relative}
-
-/* Top label (moved to top-left of hero area) */
-.hero-left{padding-left:10px;position:relative}
-.top-label{position:absolute;left:0;top:-24px;font-family:"Marcellus",serif;color:var(--cream);font-size:18px}
-
-/* Hero title & text */
-.hero-title{font-family:"Marcellus",serif;font-size:72px;line-height:0.95;color:var(--cream);margin-top:12px;margin-bottom:28px;margin-left:6px}
-.hero-desc{font-size:16px;color:var(--cream);max-width:560px;margin-bottom:36px;margin-left:6px;opacity:0.95}
-
-/* Move content um pouco mais para a esquerda (mais espaço entre texto e imagem) */
-.hero-inner{padding-left:48px}
-
-/* Botão */
-.btn-ghost{
-  background:var(--cream);color:var(--dark);border:none;padding:16px 54px;border-radius:40px;font-family:"PT Serif";font-size:16px;cursor:pointer
+.hero {
+  width: 100vw;
+  background: #5B7580;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0 40px 0;
 }
 
-/* Imagem direita - manter proporção e não cortar */
-.hero-right{width:540px;height:700px;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#ccc}
-.hero-right img{width:540px;height:auto;display:block}
+.hero-inner {
+  width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 540px; /* texto à esquerda, imagem à direita */
+  gap: 30px;
+  align-items: center;
+  position: relative;
+}
+
+.hero-left {
+  padding-left: 10px;
+  position: relative;
+}
+
+.top-label {
+  position: absolute;
+  left: 0;
+  top: -24px;
+  font-family: "Marcellus", serif;
+  color: var(--cream);
+  font-size: 18px;
+}
+
+.hero-title {
+  font-family: "Marcellus", serif;
+  font-size: 72px;
+  line-height: 0.95;
+  color: var(--cream);
+  margin-top: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--cream);
+  max-width: 560px;
+  margin-bottom: 36px;
+  opacity: 0.95;
+}
+
+/* Botão */
+.btn-ghost {
+  background: var(--cream);
+  color: var(--dark);
+  border: none;
+  padding: 16px 54px;
+  border-radius: 40px;
+  font-family: "PT Serif";
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Imagem à direita */
+.hero-right {
+  width: 540px;
+  height: 700px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  background: #ccc;
+}
+
+.hero-right img {
+  width: 540px;
+  height: auto;
+  display: block;
+}
+
 
 /* --- Espaçamento entre seções (sutil, uniforme) --- */
 section{padding-top:40px;padding-bottom:60px}
