@@ -127,256 +127,129 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 /* --- Espaçamento entre seções --- */
 section{padding-top:40px;padding-bottom:60px}
 
-/* --- SEÇÃO 2: CARDS --- */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #92A9AE;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* ===== SEÇÃO 2: DESTAQUES ===== */
 .section-title {
-  font-size: 48px;
-  color: white;
-  margin: 40px;
+  text-align: left;
+  font-family: "Marcellus", serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  background-color: #a9bfce;
+  padding: 60px 0 20px 40px;
+  margin: 0;
 }
 
+/* Container dos cards */
 .cards {
+  background-color: #a9bfce;
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 0 80px;
+  margin: 0;
 }
 
+/* Card em si (mantém as funções e efeitos) */
 .card {
-  width: 300px;
-  height: 400px;
+  width: 280px;
+  height: 380px;
   perspective: 1000px;
+  border-radius: 15px;
 }
 
 .card-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
-.card.flipped .card-inner {
+.card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
-.card-front,
-.card-back {
+.card-front, .card-back {
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 15px;
   backface-visibility: hidden;
-  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .card-front {
   background-color: #fff;
-  z-index: 2;
 }
 
 .card-back {
-  background-color: #003366;
-  color: white;
+  background-color: #58727b;
+  color: #fff;
   transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
+  font-family: "PT Serif", serif;
   text-align: center;
 }
 
+/* Imagens dos cards */
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  cursor: pointer;
 }
 
 .card-label {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background-color: #f0f0f0;
-  font-size: 20px;
+  bottom: 10px;
+  left: 0;
+  right: 0;
   text-align: center;
-  color: #003366;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 0;
+  border-radius: 0 0 15px 15px;
 }
 
-/* --- ATIVIDADES (Seção 3) --- */
-.atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
-.atividades-inner{position:relative;z-index:2;text-align:center}
-.atividades-title{font-family:"Marcellus",serif;font-size:64px;color:var(--cream);margin-bottom:22px}
-.btn-primary{background:var(--cream);color:var(--dark);border-radius:40px;padding:18px 56px;border:none;font-family:"PT Serif";font-size:16px;cursor:pointer}
-
-/* Background image: mostrar inteira (não cortar) */
-.atividades-bg{
-  position:absolute;inset:0;z-index:1;
-  background-image:url("images/section3.jpg");
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:contain;
-  opacity:1;
-  pointer-events:none;
+/* ===== SEÇÃO 3: ATIVIDADES ===== */
+.atividades {
+  background-color: #58727b;
+  text-align: center;
+  padding: 120px 20px;
+  color: #f9f5e7;
 }
 
-.atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
-
-/* --- CONTATO (Seção 4) --- */
-.contato{background:oklch(70.552% 0.02639 209.415);display:flex;justify-content:center}
-.contato-inner{width:1100px;display:flex;gap:40px;align-items:flex-start}
-
-.contato-left{width:420px;padding-left:6px}
-.redes-title{font-family:"Marcellus",serif;font-size:28px;color:var(--dark);margin-bottom:22px}
-.social-icons{display:flex;gap:40px;align-items:center}
-.social-icons img{width:120px;opacity:0.6}
-
-.contato-right{flex:1}
-.section-big{font-family:"Marcellus",serif;font-size:72px;color:var(--dark);line-height:0.95;margin-bottom:22px}
-.contact-form label{display:block;font-size:14px;color:var(--dark);margin-bottom:8px;font-weight:700}
-.two-cols{display:flex;gap:18px;margin-bottom:12px}
-.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea{
-  width:100%;padding:14px 18px;border-radius:24px;border:2px solid rgba(16,40,54,0.6);background:rgba(255,255,255,0.06);font-family:"PT Serif";font-size:14px;color:var(--dark);outline:none
-}
-.contact-form textarea{border-radius:20px;padding:18px;height:140px;resize:none}
-.btn-ghost.small{margin-top:18px}
-
-/* --- FOOTER --- */
-.footer{width:100%;background:#173842;padding:48px 0;color:var(--cream)}
-.footer-inner{width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.footer-title{font-family:"Marcellus",serif;font-size:44px}
-.footer-illu{width:160px;margin-bottom:12px}
-.footer-links a{color:var(--cream);text-decoration:underline;font-family:"PT Serif"}
-
-.footer-right{width:360px}
-.newsletter input{flex:1;padding:16px;border-radius:4px;border:none;font-size:14px}
-
-/* pequenas correções visuais para preservar o layout fixo */
-@media (max-width:1100px){
-  .hero-inner{flex-direction:column;align-items:center}
-  .hero-right{width:420px}
+.atividades-inner {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-
-/* --- Espaçamento entre seções (sutil, uniforme) --- */
-section{padding-top:40px;padding-bottom:60px}
-
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #92A9AE;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.atividades-title {
+  font-family: "Marcellus", serif;
+  font-size: 3rem;
+  margin-bottom: 40px;
 }
 
-.section-title {
-  font-size: 48px;
-  color: white;
-  margin: 40px;
+.btn-primary {
+  background-color: #f9f5e7;
+  color: #333;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-family: "PT Serif", serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.cards {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-front {
+.btn-primary:hover {
   background-color: #fff;
-  z-index: 2;
+  transform: scale(1.05);
 }
-
-.card-back {
-  background-color: #003366;
-  color: white;
-  transform: rotateY(180deg);
-  padding: 20px;
-  text-align: center;
-}
-
-.card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.card-label {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background-color: #f0f0f0;
-  font-size: 20px;
-  text-align: center;
-  color: #003366;
-}
-
-/* --- ATIVIDADES (Seção 3) --- */
-.atividades{position:relative;display:flex;align-items:center;justify-content:center;height:520px;overflow:visible;background:transparent}
-.atividades-inner{position:relative;z-index:2;text-align:center}
-.atividades-title{font-family:"Marcellus",serif;font-size:64px;color:var(--cream);margin-bottom:22px}
-.btn-primary{background:var(--cream);color:var(--dark);border-radius:40px;padding:18px 56px;border:none;font-family:"PT Serif";font-size:16px;cursor:pointer}
-
-/* Background image: mostrar inteira (não cortar) */
-.atividades-bg{
-  position:absolute;inset:0;z-index:1;
-  background-image:url("images/section3.jpg");
-  background-repeat:no-repeat;
-  background-position:center top;
-  background-size:contain; /* mostra a imagem inteira sem cortar */
-  opacity:1;
-  pointer-events:none;
-}
-
-/* Linha divisória sutil (abaixo da imagem) */
-.atividades::after{content:"";position:absolute;left:6%;right:6%;bottom:-2px;height:2px;background:rgba(255,255,255,0.06);z-index:3}
 
 /* --- CONTATO (Seção 4) --- */
 .contato{background:oklch(70.552% 0.02639 209.415);display:flex;justify-content:center}
