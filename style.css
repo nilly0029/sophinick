@@ -10,6 +10,25 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 }
 .top-label{font-family:"Marcellus",serif;color:var(--cream);font-size:20px;}
 
+/* === Correção estrutural geral === */
+
+/* O body não deve usar display:flex para o layout principal */
+body {
+  margin: 0;
+  font-family: "PT Serif", serif;
+  background-color: #5B7580;
+  color: #102836;
+}
+
+/* Container principal de cada seção */
+section {
+  width: 100%;
+  display: block;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+/* ===== HERO (mantido conforme desejado) ===== */
 .hero {
   width: 100vw;
   background: #5B7580;
@@ -21,15 +40,14 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
 .hero-inner {
   width: 1100px;
   display: grid;
-  grid-template-columns: 1fr 540px; /* texto à esquerda, imagem à direita */
+  grid-template-columns: 1fr 540px;
   gap: 30px;
   align-items: center;
-  position: relative;
 }
 
 .hero-left {
-  padding-left: 10px;
   position: relative;
+  padding-left: 10px;
 }
 
 .top-label {
@@ -48,6 +66,7 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
   color: var(--cream);
   margin-top: 12px;
   margin-bottom: 28px;
+  margin-left: 6px;
 }
 
 .hero-desc {
@@ -55,15 +74,15 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
   color: var(--cream);
   max-width: 560px;
   margin-bottom: 36px;
+  margin-left: 6px;
   opacity: 0.95;
 }
 
-/* Botão */
 .btn-ghost {
   background: var(--cream);
   color: var(--dark);
   border: none;
-  padding: 20px 54px;
+  padding: 16px 54px;
   border-radius: 40px;
   font-family: "PT Serif";
   font-size: 16px;
@@ -72,22 +91,44 @@ html,body{height:100%;font-family:"PT Serif",serif;background:#5B7580;color:#102
   display: inline-block;
 }
 
-/* Imagem à direita */
 .hero-right {
   width: 540px;
-  height: 700px;
+  height: auto;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  background: #ccc;
 }
 
 .hero-right img {
-  width: 540px;
+  width: 100%;
   height: auto;
   display: block;
 }
+
+/* ===== RESTANTE DAS SEÇÕES ===== */
+.section-title {
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+/* ... (mantém o restante do CSS exatamente como você me enviou) ... */
+
 
 /* --- Espaçamento entre seções (sutil, uniforme) --- */
 section{padding-top:40px;padding-bottom:60px}
