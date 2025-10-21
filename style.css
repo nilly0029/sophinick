@@ -236,7 +236,7 @@ section{padding-top:40px;padding-bottom:60px}
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* escurece a imagem em 40% */
+  background-color: rgba(0, 0, 0, 0.568); /* escurece a imagem em 40% */
   z-index: 0;
 }
 
@@ -244,6 +244,11 @@ section{padding-top:40px;padding-bottom:60px}
 .atividades-inner {
   position: relative;
   z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.atividades-inner {
   max-width: 800px;
   margin: 0 auto;
 }
