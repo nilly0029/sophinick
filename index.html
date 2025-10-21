@@ -82,13 +82,22 @@
 </div>
 
   <!-- ===== SEÇÃO 3: Atividades — full-width hero com imagem aparecendo inteira ===== -->
-  <section class="atividades">
-    <div class="atividades-inner">
-      <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
-      <button class="btn-primary" id="btn-clique">Clique aqui</button>
-    </div>
-    <div class="atividades-bg" aria-hidden="true"></div>
-  </section>
+<section class="atividades">
+  <div class="atividades-inner">
+    <h2 class="atividades-title">Um pouco sobre nossas atividades</h2>
+    <button class="btn-primary" id="btn-clique">Clique aqui</button>
+  </div>
+  <div class="atividades-bg" aria-hidden="true"></div>
+</section>
+
+<!-- ===== Script de redirecionamento ===== -->
+<script>
+  // Quando o botão for clicado, redireciona para a página "clique.html"
+  document.getElementById("btn-clique").addEventListener("click", function() {
+    window.location.href = "clique.html";
+  });
+</script>
+
 
   <!-- ===== SEÇÃO 4: Contato & redes sociais (layout corrigido) ===== -->
   <section class="contato">

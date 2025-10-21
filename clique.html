@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos e Galeria</title>
+  <style>
+    /* ====== ESTILO GERAL ====== */
+    body {
+      margin: 0;
+      font-family: "Marcellus", serif;
+      background-color: #6f818c;
+      color: #1e1e1e;
+      overflow-x: hidden;
+    }
+
+    h2 {
+      background-color: #d7d3cc;
+      color: #222;
+      font-size: 2.2rem;
+      text-align: center;
+      border-radius: 50px;
+      padding: 15px 40px;
+      width: fit-content;
+      margin: 60px auto 40px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* ====== SEÇÃO PROJETOS ====== */
+    .projetos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      padding: 0 60px 80px;
+    }
+
+    .projeto-card {
+      background-color: #f5f5f5;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .projeto-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .projeto-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .projeto-card .descricao {
+      padding: 20px;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    /* ====== SEÇÃO GALERIA ====== */
+    .galeria-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 80px;
+    }
+
+    .galeria-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 0 60px 40px;
+    }
+
+    .galeria-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .galeria-item {
+      flex: 0 0 auto;
+      width: 250px;
+      height: 200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria-item:hover {
+      transform: scale(1.05);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ====== SETAS ====== */
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .seta:hover {
+      background-color: rgba(255,255,255,1);
+    }
+
+    .seta.esquerda { left: 15px; }
+    .seta.direita { right: 15px; }
+
+    /* ====== MODAL (IMAGEM AMPLIADA) ====== */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .modal.fechar {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== SEÇÃO PROJETOS ====== -->
+  <h2>Projetos</h2>
+  <section class="projetos-container">
+    <div class="projeto-card">
+      <img src="Professores.png" alt="Projeto 1">
+      <div class="descricao">
+        Descrição do projeto 1. (Texto de exemplo)
+      </div>
+    </div>
+
+    <div class="projeto-card">
+      <img src="Professores (1).png" alt="Projeto 2">
+      <div class="descricao">
+        Descrição do projeto 2. (Texto de exemplo)
+      </div>
+    </div>
+
+    <div class="projeto-card">
+      <img src="Professores.png" alt="Projeto 3">
+      <div class="descricao">
+        Descrição do projeto 3. (Texto de exemplo)
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEÇÃO GALERIA ====== -->
+  <h2>Galeria de Imagem</h2>
+  <div class="galeria-wrapper">
+    <button class="seta esquerda" onclick="rolarGaleria(-1)">&#10094;</button>
+    <div class="galeria-container" id="galeria">
+      <div class="galeria-item"><img src="Professores.png" alt="Imagem 1" onclick="abrirModal(this)"></div>
+      <div class="galeria-item"><img src="Professores (1).png" alt="Imagem 2" onclick="abrirModal(this)"></div>
+      <div class="galeria-item"><img src="Professores.png" alt="Imagem 3" onclick="abrirModal(this)"></div>
+      <div class="galeria-item"><img src="Professores (1).png" alt="Imagem 4" onclick="abrirModal(this)"></div>
+      <div class="galeria-item"><img src="Professores.png" alt="Imagem 5" onclick="abrirModal(this)"></div>
+    </div>
+    <button class="seta direita" onclick="rolarGaleria(1)">&#10095;</button>
+  </div>
+
+  <!-- ====== MODAL ====== -->
+  <div id="modal" class="modal" onclick="fecharModal()">
+    <span class="modal fechar">&times;</span>
+    <img id="imagemModal" src="" alt="">
+  </div>
+
+  <!-- ====== SCRIPT ====== -->
+  <script>
+    // Rolagem lateral da galeria
+    function rolarGaleria(direcao) {
+      const galeria = document.getElementById('galeria');
+      const largura = galeria.clientWidth;
+      galeria.scrollBy({ left: direcao * largura * 0.8, behavior: 'smooth' });
+    }
+
+    // Abrir modal de imagem
+    function abrirModal(img) {
+      const modal = document.getElementById('modal');
+      const imagemModal = document.getElementById('imagemModal');
+      imagemModal.src = img.src;
+      modal.style.display = 'flex';
+    }
+
+    // Fechar modal
+    function fecharModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
 
