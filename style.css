@@ -217,11 +217,16 @@ section{padding-top:40px;padding-bottom:60px}
 
 /* ===== SEÇÃO 3: ATIVIDADES ===== */
 .atividades {
-  background-color: #58727b;
+  background-image: url('imagem3.jpeg'); /* Coloque o caminho da sua imagem aqui */
+  background-size: cover;      /* Faz a imagem cobrir toda a seção */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat;
   text-align: center;
-  padding: 120px 20px;
+  padding: 180px 20px;         /* Aumentei um pouco a altura da seção */
   color: #f9f5e7;
+  position: relative;          /* Mantém o conteúdo acima da imagem */
 }
+
 
 .atividades-inner {
   max-width: 800px;
